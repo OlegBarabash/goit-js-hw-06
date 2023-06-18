@@ -5,5 +5,5 @@ inputText.addEventListener("input", typeOut);
 
 function typeOut(event) {
     let str = event.currentTarget.value.trim()
-    str ? outputText.textContent = str : outputText.textContent = 'Anonymous'
+    outputText.textContent = str ? str : 'Anonymous'
 }
