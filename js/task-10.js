@@ -12,10 +12,13 @@ function onClickCreate() {
 
 function createBoxes(amount) {
   let boxSize = 30
-  for (let i = 1; i <= amount; i += 1) {
-    boxes.insertAdjacentHTML('afterbegin', `<div style="width: ${boxSize}px; height: ${boxSize}px; background-color: ${getRandomHexColor()};"></div>`)
+  let createBoxes = ''
+  
+  for (; amount > 0; amount -= 1) {
+    createBoxes +=`<div style="width: ${boxSize}px; height: ${boxSize}px; background-color: ${getRandomHexColor()};"></div>`
     boxSize += 10
   }
+  boxes.insertAdjacentHTML('afterbegin',createBoxes)
 }
 
 function getRandomHexColor() {
